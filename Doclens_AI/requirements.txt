@@ -1,0 +1,7 @@
+pip install tensorflow
+pip install python-docx
+pip install spacy
+pip install pdfplumber
+pip install nltk
+pip install json
+pip install transformers
