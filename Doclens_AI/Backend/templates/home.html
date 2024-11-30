@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doclens.ai</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-image: url("{% static 'images/bg.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            z-index: -1; /* Puts the background behind the content */
+        }
+        /* Semi-transparent overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(27, 25, 25, 0.6); /* White overlay with 60% opacity */
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column; /* Arrange items in a column */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(255, 255, 255, 0); /* Transparent background */
+            box-shadow: none; /* Remove the shadow for no depth */
+            max-width: 500px; /* Optional: limit width */
+            text-align: center; /* Center text */
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100px; /* Adjust the size of the logo */
+            height: 100px; /* Ensure the height is the same as width for a circular effect */
+            border-radius: 50%; /* Makes the image circular */
+            margin-right: 20px;
+            object-fit: cover; /* Ensures the image covers the circular area without distortion */
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block; /* Ensures it behaves like a button */
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Removes underline */
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="{% static 'images/logo1.png' %}" alt="Logo"> <!-- Replace with your logo URL -->
+            <div class="container">
+                <h1 style="font-family: 'Book Antiqua', serif; font-weight: bold;">Welcome to DocLens.ai</h1>
+                <p style="font-family: 'Didot', serif;">
+                    <b style="font-family: 'Book Antiqua', serif;">Your Document Verification Expert.</b><br>
+                    Specialized in precise, intelligent document verification, validate authenticity, detect inconsistencies, and maintain integrity.
+                </p>
+            </div>
+        </div>
+    </header>
+    
+    <a    href="{% url 'render_form' %}" class="button">Try Now</a> <!-- Replace 'your-target-page.html' with the actual page you want to navigate to -->
+
+    <footer>
+        <p>&copy; 2024 DocLens. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
+
